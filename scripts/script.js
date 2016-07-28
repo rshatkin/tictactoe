@@ -23,7 +23,7 @@ function turn() {
 
 	var state = stateOfTheBoard();
 	findWinner(state);
-	// findWinnersOnDiag(state);
+	findWinnersOnDiag(state);
 };
 
 decideColor = function(){
@@ -57,27 +57,27 @@ function findWinner(state) {
 
  	for (i=0; i < state.length; i++) {
  		var column	= [state[i][0], state[i][1], state[i][2]],
- 			row 	= [state[0][i], state[1][i], state[2][i]],
- 			
- 			diag	= [state[0][2], state[1][1], state[2][0]],
- 			diag2	= [state[0][0], state[1][1], state[2][2]];
+ 			row 	= [state[0][i], state[1][i], state[2][i]];
+
+ 			// diag	= [state[0][2], state[1][1], state[2][0]],
+ 			// diag2	= [state[0][0], state[1][1], state[2][2]];
 
 
  		valueCheck(row[0], row[1], row[2]);
  		valueCheck(column[0], column[1], column[2]);
 
- 		valueCheck(diag[0], diag[1], diag[2]);
- 		valueCheck(diag2[0], diag2[1], diag2[2]);
+ 		// valueCheck(diag[0], diag[1], diag[2]);
+ 		// valueCheck(diag2[0], diag2[1], diag2[2]);
  	}
 
 };
 
-// function findWinnersOnDiag(state) {
+function findWinnersOnDiag(state) {
 
-//     valueCheck(state[0][0], state[1][1], state[2][2]);
-//     valueCheck(state[0][2], state[1][1], state[2][0]);
+    valueCheck(state[0][0], state[1][1], state[2][2]);
+    valueCheck(state[0][2], state[1][1], state[2][0]);
 
-// };
+};
 
 
 
