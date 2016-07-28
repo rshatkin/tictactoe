@@ -1,0 +1,19 @@
+table {
+	width: 600px;
+	height: 600px;
+}
+
+tr {
+	width: 100%;
+}
+
+th {
+	border: 1px solid #000;
+	width: 33%;
+	height: 33%;
+}
+
+th:hover {
+	background-color: #000;
+	opacity: .25;
+}
