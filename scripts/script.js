@@ -45,11 +45,14 @@ function stateOfTheBoard() {
 
 };
 
+// var positionValues = [value1, value2, value3];
+
 function valueCheck(value1, value2, value3) {
 	var winnerCheck = (value1 != '') && ((value1 == value2) && (value2 == value3)); 
 
 	if (winnerCheck) {
 		alert(value1 + ' is the winner!');
+		clearBoard();
 	}
 };
 
@@ -79,6 +82,22 @@ function findWinnersOnDiag(state) {
 
 };
 
+function clearBoard(state) {
+	
+	// console.log(squaresInRow[i]);
+
+	for(i = 0; i < rows.length; i++) {
+		var squaresInRow = rows[i].getElementsByTagName('th');
+		
+		// start here
+		if(hasClass(squaresInRow[i], 'clicked')) {
+			squaresInRow[i].className = '';
+			squaresInRow[i].style.background = '';
+			console.log('clear');
+		}
+	}
+
+};
 
 
 
